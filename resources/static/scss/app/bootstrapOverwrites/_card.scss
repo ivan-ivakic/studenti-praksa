@@ -1,0 +1,14 @@
+.card {
+  background: #F7F7F7;
+  border: 0;
+
+
+  &-title {
+    @extend .sectionTitle;
+  }
+
+
+  &-block {
+    padding: 1.5rem;
+  }
+}

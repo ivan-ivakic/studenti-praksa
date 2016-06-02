@@ -1,0 +1,54 @@
+// $body-bg:                    #fff !default;
+// $body-color:                 $gray-dark !default;
+
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: $small-breakpoint,
+  sm: $smallPlus-breakpoint,
+  md: $medium-breakpoint,
+  lg: $large-breakpoint,
+  xl: $largePlus-breakpoint
+);
+
+
+// Grid containers
+$container-max-widths: (
+  sm: $small-maxWidth,
+  md: $medium-maxWidth,
+  lg: $large-maxWidth,
+  xl: $largePlus-maxWidth
+);
+
+
+// Grid columns
+$grid-columns: 12;
+$grid-gutter-width: $grid-gutter;
+
+
+// Typography
+$font-family-sans-serif: $body-fontFamily;
+$font-family-base: $body-fontFamily;
+// $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+// $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+
+// Buttons
+// $btn-primary-color: white;
+// $btn-primary-bg: $green;
+// $btn-primary-border: darken($green, 20);
+
+// $btn-secondary-color: white;
+// $btn-secondary-bg: $blue;
+// $btn-secondary-border: $linkHoverColor;
+
+
+// Links
+// $link-color:                 $linkColor;
+// $link-decoration:            none;
+// $link-hover-color:           $linkHoverColor;
+// $link-hover-decoration:      none;
+
+
+
+$border-radius: 0;

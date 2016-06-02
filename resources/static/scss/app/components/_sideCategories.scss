@@ -1,0 +1,48 @@
+.sideCategories {
+  font-size: 14px;
+  border-right: 1px solid $lightGray;
+
+
+  > ul {
+    display: block;
+    margin-left: -0.5em;
+  }
+
+
+  ul {
+    list-style: none;
+
+
+    li {
+      display: block;
+    }
+
+
+      a {
+        display: block;
+        padding: 0.5em 0.5em;
+        color: $textColor_base;
+        text-decoration: none !important;
+
+
+        &:hover {
+          color: $textColor_base;
+          background: rgba(black, 0.075);
+        }
+      }
+
+
+    li.active {
+      a {
+        font-weight: 500;
+        color: white;
+        background: $blue;
+      }
+    }
+  }
+
+
+  ul ul a {
+    padding-left: 1.5em;
+  }
+}

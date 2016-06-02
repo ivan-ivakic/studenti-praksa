@@ -1,0 +1,225 @@
+{% extends "app/layouts/main.html" %}
+{% set pageID = "pgTemplateView" %}
+{% block content %}
+  {% include "app/partials/header.html" %}
+
+  <div class='grid'>
+    <div class='grid_column'>
+      <header class='pgTemplateView_header'>
+        <label class='pgTemplateView_id'>
+          Predlozak #12345678
+        </label>
+        <h1 class='pgTemplateView_title'>
+          Ocjena Dobavljaca 2015
+        </h1>
+      </header>
+    </div>
+  </div>
+
+  <div class='grid'>
+
+    <!-- Cover image -->
+    <div class='grid_column -medium4 -large3'>
+      <div class='pgTemplateView_cover'>
+        <div class='pgTemplateView_cover_front'>
+          <img src='http://placehold.it/500x650' alt=''>
+        </div>
+        <div class='pgTemplateView_cover_back'></div>
+      </div>
+      <div class='btn btn-secondary -fullWidth'>
+        <img class='icon -h16' src='media/app/icons/download.svg' alt=''>
+        Preuzmi predlozak (PDF)
+      </div>
+    </div>
+
+    <!-- Main column -->
+    <div class='grid_column -medium8 -large9'>
+      <div class='grid'>
+
+        <!-- Basic info -->
+        <div class='grid_column'>
+          <dl class='pgTemplateView_dl'>
+            <dt>Kategorija</dt>
+            <dd>Kadrovi / Edukacija</dd>
+
+            <dt class='strong'>Status</dt>
+            <dd class='strong'>Neodobreno</dd>
+
+            <dt>Verzija</dt>
+            <dd>12</dd>
+
+            <dt>Datum zadnje verzije</dt>
+            <dd>12.01.2016.</dd>
+
+            <dt>Autor zadnje verzije</dt>
+            <dd>John Travolta</dd>
+
+            <dt>Datum prve verzije</dt>
+            <dd>12.01.2014.</dd>
+
+            <dt>Autor prve verzije</dt>
+            <dd>John Travolta</dd>
+          </dl>
+        </div>
+
+        <!-- Alarms -->
+        <div class='grid_column'>
+          <h2 class='sectionTitle'>Alarmi</h2>
+          <div class='table-responsive'>
+            <table class="table -edge alarmTable">
+              <thead>
+                <tr>
+                  <th class='alarmTable_title'>Naziv alarma</th>
+                  <th class='alarmTable_date'>Datum</th>
+                  <th class='alarmTable_time'>Vrijeme</th>
+                  <th class='alarmTable_people'>Odgovorne osobe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class='codeRed'>
+                  <td class='alarmTable_title'>
+                    Ocjena dobavljaca 2015
+                    <img class='icon -h16' src='media/app/icons/alarm-red.svg' alt=''>
+                  </td>
+                  <td class='alarmTable_date'>13.04.2016.</td>
+                  <td class='alarmTable_time'>14:00</td>
+                  <td class='alarmTable_people'>John Travolta, Jackie Chan</td>
+                </tr>
+                <tr class='codeYellow'>
+                  <td class='alarmTable_title'>
+                    Ocjena dobavljaca 2015
+                    <img class='icon -h16' src='media/app/icons/alarm-yellow.svg' alt=''>
+                  </td>
+                  <td class='alarmTable_date'>13.04.2016.</td>
+                  <td class='alarmTable_time'>14:00</td>
+                  <td class='alarmTable_people'>John Travolta, Jackie Chan</td>
+                </tr>
+                <tr>
+                  <td class='alarmTable_title'>Ocjena dobavljaca 2015</td>
+                  <td class='alarmTable_date'>13.04.2016.</td>
+                  <td class='alarmTable_time'>14:00</td>
+                  <td class='alarmTable_people'>John Travolta, Jackie Chan</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class='grid_column'>
+          <div class='section -divide pgTemplateView_controls'>
+            <a class="btn btn-secondary -wide" href='templateEdit.html'>
+              Uredi predlozak
+            </a>
+            <a class="btn btn-neutral" data-toggle="modal" data-target="#previousVersions">
+              Pregled prijasnjih verzija
+            </a>
+          </div>
+        </div>
+
+        <!-- Odobrenja -->
+        <div class='grid_column'>
+          <div class='section -divide pgTemplateView_approvals'>
+            <h2 class='sectionTitle'>Odobrenja</h2>
+            <div class='table-responsive'>
+              <table class="table -edge">
+                <thead>
+                  <tr>
+                    <th class='approvalTable_person'>Osoba</th>
+                    <th class='approvalTable_date'>Datum</th>
+                    <th class='approvalTable_time'>Vrijeme</th>
+                    <th class='approvalTable_status'>Status</th>
+                    <th class='approvalTable_comment'>Komentar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class='approvalTable_person'>Djelo Hadziselimovic</td>
+                    <td class='approvalTable_date'>13.04.2016.</td>
+                    <td class='approvalTable_time'>14:00</td>
+                    <td class='approvalTable_status'>Odobreno</td>
+                    <td class='approvalTable_comment'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                  </tr>
+                  <tr>
+                    <td class='approvalTable_person'>Luke Skywalker</td>
+                    <td class='approvalTable_date'>--</td>
+                    <td class='approvalTable_time'>--</td>
+                    <td class='approvalTable_status'>Na cekanju</td>
+                    <td class='approvalTable_comment'></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- My approval -->
+        <div class='grid_column'>
+          <div class='section pgTemplateView_myApproval'>
+            <h2 class='sectionTitle'>Ovaj predlozak ceka vase odobrenje</h2>
+            <form action=''>
+              <fieldset class="form-group">
+                <textarea class="form-control" rows="3" placeholder='Komentar...'></textarea>
+              </fieldset>
+              <button type="submit" class="btn btn-primary -wider">Odobri</button>
+              <button type="submit" class="btn btn-danger -wider">Odbij</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Previous version modal -->
+  <div class="modal fade" id='previousVersions'>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Prijasnje verzije ovog dokumenta</h4>
+        </div>
+        <div class="modal-body">
+          <div class='table-responsive'>
+            <table class="table -edge previousTable">
+              <thead>
+                <tr>
+                  <th class='approvalTable_version'>Verzija</th>
+                  <th class='approvalTable_date'>Datum</th>
+                  <th class='approvalTable_time'>Vrijeme</th>
+                  <th class='previousTable_person'>Osoba</th>
+                  <th class='previousTable_download'></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class='approvalTable_version'>2</td>
+                  <td class='approvalTable_date'>231321</td>
+                  <td class='approvalTable_time'>13232132</td>
+                  <td class='previousTable_person'>Djuro</td>
+                  <td class='previousTable_download'><a class='link' href=''>Preuzmi</a></td>
+                </tr>
+                <tr>
+                  <td class='approvalTable_version'>2</td>
+                  <td class='approvalTable_date'>231321</td>
+                  <td class='approvalTable_time'>13232132</td>
+                  <td class='previousTable_person'>Djuro</td>
+                  <td class='previousTable_download'><a class='link' href=''>Preuzmi</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% include "app/partials/footer.html" %}
+{% endblock %}

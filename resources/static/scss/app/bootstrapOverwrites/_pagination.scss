@@ -1,0 +1,12 @@
+.pagination {
+  display: block;
+  text-align: center;
+  font-size: 0;
+
+
+  .page-item {
+    float: none;
+    display: inline-block;
+    font-size: 15px;
+  }
+}

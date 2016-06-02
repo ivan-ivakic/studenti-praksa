@@ -1,0 +1,35 @@
+.pgTemplateView {
+  //
+
+
+  &_dl {
+    @include clearfix;
+    display: block;
+    width: 100%;
+    padding-left: 190px;
+
+
+    dt {
+      float: left;
+      width: 180px;
+      margin-left: -190px;
+      padding: 4px 0;
+    }
+
+
+    dd {
+      // float: left;
+      display: block;
+      padding: 4px 0;
+      // width: 100%;
+
+
+      &:after {
+        display: block;
+        width: 1px;
+        height: 1px;
+        content: '';
+      }
+    }
+  }
+}

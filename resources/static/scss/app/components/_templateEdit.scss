@@ -1,0 +1,56 @@
+.pgTemplateEdit {
+  //
+
+
+  &_header {
+    @extend .pgTemplateView_header;
+  }
+
+
+    .pgTemplateView_id {
+      margin-bottom: 10px;
+      color: $gray;
+
+
+      .pgTemplateView_id_lock {
+        margin-left: 2px;
+        vertical-align: -2px;
+        opacity: 0.35;
+      }
+    }
+
+
+  &_info {
+    //
+
+
+    &_column {
+      @include clearfix;
+
+
+      &.-left {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+
+      &.-right {
+        display: inline-block;
+      }
+    }
+  }
+
+
+  &_approvals {
+    margin-top: 0.75rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid $lightGray;
+  }
+
+
+  &_footer {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid $lightGray;
+  }
+}

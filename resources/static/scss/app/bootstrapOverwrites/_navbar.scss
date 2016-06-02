@@ -1,0 +1,25 @@
+.navbar {
+  margin-bottom: 2rem;
+  padding: 0;
+  border-bottom: 1px solid $lightGray;
+  border-radius: 0;
+
+
+  &-nav {
+
+
+    .nav-item {
+      margin: 0 !important;
+    }
+
+
+      .nav-link {
+        padding: 2rem 1em;
+      }
+
+
+      .nav-item:last-child .nav-link {
+        padding-right: 0;
+      }
+  }
+}

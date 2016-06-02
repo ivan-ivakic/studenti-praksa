@@ -1,0 +1,90 @@
+/*------------------------------------------------------------------------------------
+  PATHS
+------------------------------------------------------------------------------------*/
+  $npm: "../node_modules/";
+
+
+/*------------------------------------------------------------------------------------
+  BREAKPOINTS
+------------------------------------------------------------------------------------*/
+  $small-breakpoint: 320px;
+  $smallPlus-breakpoint: 468px;
+  $medium-breakpoint: 600px;
+  $mediumPlus-breakpoint: 800px;
+  $large-breakpoint: 1025px;
+  $largePlus-breakpoint: 1280px;
+
+
+/*------------------------------------------------------------------------------------
+  GRID
+------------------------------------------------------------------------------------*/
+  $small-maxWidth: auto;
+  $medium-maxWidth: auto;
+  $large-maxWidth: 1200px;
+  $largePlus-maxWidth: 1280px;
+  $grid-gutter: 32px;
+
+
+/*------------------------------------------------------------------------------------
+  BRAND COLORS
+------------------------------------------------------------------------------------*/
+  $green: #63B44A;
+  $blue: #5B9AE3;
+  $gray: #A6A6A6;
+
+  // State colors
+  // $green: #67B147;
+  $red: #E0212E;
+  $yellow: #CB8A1F;
+
+  // Neutral colors
+  $white: #FFFFFF;
+  $black: #202020;
+  $lightGray: #E8E8E8;
+
+
+/*------------------------------------------------------------------------------------
+  ANIMATIONS
+------------------------------------------------------------------------------------*/
+  $easing_smallBounce: cubic-bezier(.15,1.6,.25,.95);
+  $easing_largeBounce: cubic-bezier(.26,3,.43,.92);
+
+
+/*------------------------------------------------------------------------------------
+  TYPOGRAPHY
+------------------------------------------------------------------------------------*/
+  $body-fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  $heading-fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  $primary-fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  // Heading properties
+  $heading-fontWeight: 700;
+
+  // Default text colors
+  $textColor_base: #333333;
+  $textColor_light: null;
+  $textColor_lighter: #b6c3c5;
+  $textColor_dark: null;
+  $textColor_darker: null;
+
+  // Alternative text colors (usually when placed on top of a teal background)
+  $textColor_baseAlt: white;
+  $textColor_lightAlt: #7db7c6;
+  $textColor_lighterAlt: null;
+  $textColor_darkAlt: null;
+  $textColor_darkerAlt: null;
+
+  // Text sizes
+  $textNormal: 15px;
+  $textSmall: 13px;
+  $textSmaller: 12px;
+  $textLarge: 16px;
+  $textLarger: 18px;
+
+
+/*------------------------------------------------------------------------------------
+  GAPS
+------------------------------------------------------------------------------------*/
+  $gap: 28px;
+  $gapSmall: 20px;
+  $gapLarge: 48px;

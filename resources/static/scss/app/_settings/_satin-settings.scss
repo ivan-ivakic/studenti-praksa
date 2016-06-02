@@ -1,0 +1,57 @@
+/*------------------------------------------------------------------------------------
+  PATHS
+------------------------------------------------------------------------------------*/
+  $st-img-path: "../media/";
+  $st-file-path: "./";
+
+
+/*------------------------------------------------------------------------------------
+  BREAKPOINTS
+------------------------------------------------------------------------------------*/
+  $st-grid-small-breakpoint: $small-breakpoint;
+  $st-grid-smallPlus-breakpoint: $smallPlus-breakpoint;
+  $st-grid-medium-breakpoint: $medium-breakpoint;
+  $st-grid-mediumPlus-breakpoint: $mediumPlus-breakpoint;
+  $st-grid-large-breakpoint: $large-breakpoint;
+  $st-grid-largePlus-breakpoint: $largePlus-breakpoint;
+
+
+/*------------------------------------------------------------------------------------
+  GRID
+------------------------------------------------------------------------------------*/
+  $st-grid-spacing: $grid-gutter;
+  $st-grid-responsiveSpacing: false;
+  $st-grid-large-width: $large-maxWidth;
+  $st-grid-largePlus-width: $largePlus-maxWidth;
+
+
+/*------------------------------------------------------------------------------------
+  GAPS
+------------------------------------------------------------------------------------*/
+  $st-gap: $gap;
+  $st-gapSmall: $gapSmall;
+  $st-gapLarge: $gapLarge;
+
+
+/*------------------------------------------------------------------------------------
+  FONTS
+------------------------------------------------------------------------------------*/
+  $st-sans-font-family: $body-fontFamily;
+  $st-body-font-family: $body-fontFamily;
+  $st-interface-font-family: $body-fontFamily;
+
+  $st-header-font-family: $heading-fontFamily;
+  $st-header-font-weight: $heading-fontWeight;
+
+  $st-baseRem: $textNormal;
+  $st-text-small: $textSmall;
+  $st-text-normal: $textNormal;
+  $st-text-large: $textLarge;
+
+
+
+/*------------------------------------------------------------------------------------
+  HEADING SIZES
+------------------------------------------------------------------------------------*/
+  $st-h2: 1.9em;
+  $st-h3: 1.3em;

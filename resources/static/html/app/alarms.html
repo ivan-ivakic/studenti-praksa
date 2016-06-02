@@ -1,0 +1,180 @@
+{% extends "app/layouts/main.html" %}
+{% set pageID = "pgAlarms" %}
+{% block content %}
+  {% include "app/partials/header.html" %}
+
+  <div class='grid'>
+    <div class='grid_column'>
+      <h2 class="pageTitle -inline">Alarmi</h2>
+      <a class='btn btn-primary' data-toggle="modal" data-target="#alarmModal">Dodaj novi alarm</a>
+
+      <div class='table-responsive'>
+        <table class="table table-hover -edge alarmTable">
+          <thead>
+            <tr>
+              <th class='alarmTable_title'>Naziv alarma</th>
+              <th class='alarmTable_template'>Vezani predlozak</th>
+              <th class='alarmTable_date'>Datum</th>
+              <th class='alarmTable_time'>Vrijeme</th>
+              <th class='alarmTable_people'>Odgovorne osobe</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class='codeRed'>
+              <td class='alarmTable_title'>
+                Ocjena dobavljaca 2015
+                <img class='icon -h16' src='media/app/icons/alarm-red.svg' alt=''>
+              </td>
+              <td class='alarmTable_template'><a class='link' href='templateView.html'>Ocjena dobavljaca</a></td>
+              <td class='alarmTable_date'>13.04.2016.</td>
+              <td class='alarmTable_time'>14:00</td>
+              <td class='alarmTable_people'>John Travolta, Jackie Chan</td>
+              <td class='table_adminCell'>
+                <a class='table_adminCell_item' data-toggle="modal" data-target="#alarmModal">
+                  <img class='icon -h16 table_adminCell_icon -edit' src='media/app/icons/edit.svg' alt=''>
+                </a>
+                <a class='table_adminCell_item'>
+                  <img class='icon -h16 table_adminCell_icon -delete' src='media/app/icons/delete.svg' alt=''>
+                </a>
+              </td>
+            </tr>
+            <tr class='codeYellow'>
+              <td class='alarmTable_title'>
+                Ocjena dobavljaca 2015
+                <img class='icon -h16' src='media/app/icons/alarm-yellow.svg' alt=''>
+              </td>
+              <td class='alarmTable_template'><a class='link' href='templateView.html'>Ocjena dobavljaca</a></td>
+              <td class='alarmTable_date'>13.04.2016.</td>
+              <td class='alarmTable_time'>14:00</td>
+              <td class='alarmTable_people'>John Travolta, Jackie Chan</td>
+              <td class='table_adminCell'>
+                <a class='table_adminCell_item' data-toggle="modal" data-target="#alarmModal">
+                  <img class='icon -h16 table_adminCell_icon -edit' src='media/app/icons/edit.svg' alt=''>
+                </a>
+                <a class='table_adminCell_item'>
+                  <img class='icon -h16 table_adminCell_icon -delete' src='media/app/icons/delete.svg' alt=''>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class='alarmTable_title'>Ocjena dobavljaca 2015</td>
+              <td class='alarmTable_template'><a class='link' href='templateView.html'>Ocjena dobavljaca</a></td>
+              <td class='alarmTable_date'>13.04.2016.</td>
+              <td class='alarmTable_time'>14:00</td>
+              <td class='alarmTable_people'>John Travolta, Jackie Chan</td>
+              <td class='table_adminCell'>
+                <a class='table_adminCell_item' data-toggle="modal" data-target="#alarmModal">
+                  <img class='icon -h16 table_adminCell_icon -edit' src='media/app/icons/edit.svg' alt=''>
+                </a>
+                <a class='table_adminCell_item'>
+                  <img class='icon -h16 table_adminCell_icon -delete' src='media/app/icons/delete.svg' alt=''>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <nav>
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- Add/edit modal -->
+  <!-- Ovaj skoro isto modal postoji na templateEdit.html stranici pa ga mozete spojiti u jednu komponentu -->
+  <div class="modal fade" id='alarmModal'>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Dodaj novi alarm</h4>
+        </div>
+        <div class="modal-body">
+          <form action=''>
+            <fieldset class="form-group">
+              <label>Naziv alarma</label>
+              <input type="text" class="form-control">
+            </fieldset>
+
+            <div class='grid'>
+              <div class='grid_column -medium6'>
+                <fieldset class="form-group">
+                  <label>Datum</label>
+                  <input type="text" class="form-control">
+                </fieldset>
+              </div>
+              <div class='grid_column -medium6'>
+                <fieldset class="form-group">
+                  <label>Vrijeme</label>
+                  <input type="text" class="form-control">
+                </fieldset>
+              </div>
+            </div>
+
+            <fieldset class="form-group">
+              <label>Vezani predlozak</label>
+              <select class="form-control c-select">
+                <option selected>--</option>
+                <optgroup label="Kadrovi">
+                  <option>Predlozak #1</option>
+                  <option>Predlozak #2</option>
+                </optgroup>
+                <optgroup label="Kategorija 2">
+                  <option>Predlozak #1</option>
+                  <option>Predlozak #2</option>
+                </optgroup>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label>Komentar</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label>Odgovorne osobe? (ovdje bi trebao neki js library za vise odabira)</label>
+              <select class="form-control c-select">
+                <option selected>--</option>
+                <option>John Doe</option>
+                <option>John Doe</option>
+                <option>John Doe</option>
+                <option>John Doe</option>
+                <option>John Doe</option>
+              </select>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Dodaj alarm</button>
+          <button type="button" class="btn btn-neutral" data-dismiss="modal">Odustani</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% include "app/partials/footer.html" %}
+{% endblock %}

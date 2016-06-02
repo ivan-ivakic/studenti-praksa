@@ -1,0 +1,25 @@
+#---------------
+# Design stuff
+#---------------
+*.scssc
+.DS_Store
+**/css/maps/*
+**/node_modules/*
+!**/node_modules/satin/
+!**/node_modules/hexis-commons/
+!**/node_modules/jquery/
+!**/node_modules/lightgallery/
+!**/node_modules/gsap/
+!**/node_modules/bootstrap/
+!**/node_modules/bootstrap-sass/
+!**/node_modules/html5sortable/
+!**/node_modules/dropzone/
+!**/node_modules/moment/
+!**/node_modules/pikaday/
+!**/node_modules/pickadate/
+!**/node_modules/remodal/
+!**/node_modules/tether/
+!**/scripts/**/vendor/
+!**/satin/**/vendor/
+!**/scss/**/vendor/
+!**/css/**/vendor/

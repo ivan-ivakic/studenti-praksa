@@ -1,0 +1,75 @@
+.table {
+  font-size: $textNormal;
+
+
+  thead th {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+
+  td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+
+  tr.codeRed {
+    td, th {
+      color: $red;
+      background: rgba($red, 0.1);
+    }
+  }
+
+
+  tr.codeYellow {
+    td, th {
+      color: $yellow;
+      background: rgba($yellow, 0.05);
+    }
+  }
+}
+
+
+.table.-compact {
+  font-size: 14px;
+}
+
+
+.table.-edge {
+
+
+  tr th:first-child,
+  tr td:first-child {
+    padding-left: 0;
+  }
+
+
+  tr th:last-child,
+  tr td:last-child {
+    padding-right: 0;
+  }
+}
+
+
+.table_adminCell {
+  // opacity: 0.1;
+  text-align: right;
+
+
+  a {
+    display: inline-block;
+    padding: 0px 3px;
+    text-decoration: none;
+
+
+    &:hover {
+      background: rgba(black, 0.05);
+    }
+  }
+
+
+  tr:hover & {
+    opacity: 1;
+  }
+}

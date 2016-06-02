@@ -1,0 +1,68 @@
+$sideCategories_width: 230px;
+
+
+.templateListHead {
+  margin-bottom: 1.25rem;
+
+
+  &_search {
+    margin-top: -2px;
+
+
+    &_input {
+      //
+    }
+
+
+    &_submit {
+      //
+    }
+  }
+}
+
+
+.templateList {
+  @include clearfix;
+
+
+  &_sidebar {
+    //
+
+
+    &_inner {
+      //
+    }
+
+
+      &_title {
+        display: block;
+        margin: 0 0 1em;
+        font-size: 15px;
+        font-weight: bold;
+        color: $black;
+      }
+  }
+
+
+  &_content {
+    //
+
+
+    &_inner {
+      //
+    }
+  }
+
+
+  @include large {
+    &_sidebar {
+      float: left;
+      width: $sideCategories_width;
+    }
+
+
+    &_content {
+      padding-left: $sideCategories_width + 30;
+    }
+  }
+}

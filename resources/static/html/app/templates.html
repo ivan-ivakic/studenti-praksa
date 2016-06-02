@@ -1,0 +1,228 @@
+{% extends "app/layouts/main.html" %}
+{% set pageID = "pgTemplates" %}
+{% block content %}
+  {% include "app/partials/header.html" %}
+
+  <!-- <div class='grid gap'>
+    <div class='grid_column -mediumPlus6'>
+      <div class="card card-block">
+        <h2 class="card-title">Nadolazeci alarmi</h2>
+        <table class="table -edge alarmTable">
+          <thead>
+            <tr>
+              <th class='alarmTable_title'>Naziv alarma</th>
+              <th class='alarmTable_date'>Datum</th>
+              <th class='alarmTable_time'>Vrijeme</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='alarmTable_title'>Ocjena dobavljaca 2015</td>
+              <td class='alarmTable_date'>13.04.2016.</td>
+              <td class='alarmTable_time'>14:00</td>
+            </tr>
+            <tr>
+              <td class='alarmTable_title'>Ocjena dobavljaca 2015</td>
+              <td class='alarmTable_date'>13.04.2016.</td>
+              <td class='alarmTable_time'>14:00</td>
+            </tr>
+            <tr>
+              <td class='alarmTable_title'>Ocjena dobavljaca 2015</td>
+              <td class='alarmTable_date'>13.04.2016.</td>
+              <td class='alarmTable_time'>14:00</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href='alarms.html' class='btn btn-secondary'>
+          Pregledaj ostalih 8 alarma
+        </a>
+      </div>
+    </div>
+
+    <div class='grid_column -mediumPlus6'>
+      <div class="card card-block">
+        <h2 class="card-title">Predlosci koji cekaju moje odobrenje</h2>
+        <table class="table -edge templateTable">
+          <thead>
+            <tr>
+              <th class='templateTable_title'>Naziv alarma</th>
+              <th class='templateTable_date'>Datum</th>
+              <th class='templateTable_time'>Vrijeme</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='templateTable_title'>Ocjena dobavljaca 2015</td>
+              <td class='templateTable_date'>13.04.2016.</td>
+              <td class='templateTable_time'>14:00</td>
+            </tr>
+            <tr>
+              <td class='templateTable_title'>Ocjena dobavljaca 2015</td>
+              <td class='templateTable_date'>13.04.2016.</td>
+              <td class='templateTable_time'>14:00</td>
+            </tr>
+            <tr>
+              <td class='templateTable_title'>Ocjena dobavljaca 2015</td>
+              <td class='templateTable_date'>13.04.2016.</td>
+              <td class='templateTable_time'>14:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div> -->
+
+  <div class='grid'>
+    <div class='grid_column'>
+      <div class="card card-block">
+
+        <div class='templateListHead'>
+          <div class='grid'>
+            <div class='grid_column -medium6'>
+              <h2 class="sectionTitle -inline">
+                Pregled svih predložaka
+              </h2>
+              <a class='btn btn-primary' href='templateEdit.html'>
+                Dodaj novi predlozak
+              </a>
+            </div>
+            <div class='grid_column -medium6 textRight'>
+              <form class='templateListHead_search form-inline' action=''>
+                <div class="form-group">
+                  <label class="sr-only">Pretraga...</label>
+                  <input type="text" class="form-control templateListHead_search_input" placeholder="Pretraga...">
+                </div>
+                <button type="submit" class="btn btn-secondary templateListHead_search_submit">
+                  Trazi
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class='templateList'>
+
+          <!-- Side categories -->
+          <div class='templateList_sidebar'>
+            <div class='templateList_sidebar_inner'>
+              <h3 class='templateList_sidebar_title'>
+                Kategorije
+              </h3>
+              <nav class='sideCategories'>
+                <ul>
+                  <li><a>Sadržaj dokumentacije QMS</a></li>
+                  <li><a>Uprava</a></li>
+                  <li>
+                    <a>Kadrovi</a>
+                    <ul>
+                      <li class='active'><a>Edukacija</a></li>
+                      <li><a>Plan edukacije</a></li>
+                    </ul>
+                  </li>
+                  <li><a>Oprema</a></li>
+                  <li><a>Komercijala</a></li>
+                  <li><a>Razvoj</a></li>
+                  <li><a>Nabava</a></li>
+                  <li><a>Realizacija proizvoda</a></li>
+                  <li><a>Interne nesukladnosti</a></li>
+                  <li><a>Mjerenje i analiza</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Template list -->
+          <div class='templateList_content'>
+            <div class='templateList_content_inner'>
+              <div class='table-responsive'>
+                <table class="table table-hover -edge templateTable">
+                  <thead>
+                    <tr>
+                      <th class='templateTable_id'>Broj</th>
+                      <th class='templateTable_date'>Datum</th>
+                      <th class='templateTable_code'>Oznaka</th>
+                      <th class='templateTable_title'>Naziv</th>
+                      <th class='templateTable_status'>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class='templateTable_id'>110673043294</td>
+                      <td class='templateTable_date'>26.03.2016.</td>
+                      <td class='templateTable_code'>QSDOC-14-567</td>
+                      <td class='templateTable_title'><a class='link' href='templateView.html'>Ocjena dobavljaca</a></td>
+                      <td class='templateTable_status'>Neodobren</td>
+                      <td class='table_adminCell'>
+                        <a href='auditsAdd.html' class='table_adminCell_item'>
+                          <img class='icon -h16 table_adminCell_icon -edit' src='media/app/icons/edit.svg' alt=''>
+                        </a>
+                        <a class='table_adminCell_item'>
+                          <img class='icon -h16 table_adminCell_icon -delete' src='media/app/icons/delete.svg' alt=''>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='templateTable_id'>110673043294</td>
+                      <td class='templateTable_date'>26.03.2016.</td>
+                      <td class='templateTable_code'>QSDOC-14-567</td>
+                      <td class='templateTable_title'><a class='link' href='templateView.html'>Ocjena dobavljaca</a></td>
+                      <td class='templateTable_status'>Neodobren</td>
+                      <td class='table_adminCell'>
+                        <a href='auditsAdd.html' class='table_adminCell_item'>
+                          <img class='icon -h16 table_adminCell_icon -edit' src='media/app/icons/edit.svg' alt=''>
+                        </a>
+                        <a class='table_adminCell_item'>
+                          <img class='icon -h16 table_adminCell_icon -delete' src='media/app/icons/delete.svg' alt=''>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='templateTable_id'>110673043294</td>
+                      <td class='templateTable_date'>26.03.2016.</td>
+                      <td class='templateTable_code'>QSDOC-14-567</td>
+                      <td class='templateTable_title'><a class='link' href='templateView.html'>Ocjena dobavljaca</a></td>
+                      <td class='templateTable_status'>Neodobren</td>
+                      <td class='table_adminCell'>
+                        <a href='auditsAdd.html' class='table_adminCell_item'>
+                          <img class='icon -h16 table_adminCell_icon -edit' src='media/app/icons/edit.svg' alt=''>
+                        </a>
+                        <a class='table_adminCell_item'>
+                          <img class='icon -h16 table_adminCell_icon -delete' src='media/app/icons/delete.svg' alt=''>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <nav class='templateTable_pagination'>
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "app/partials/footer.html" %}
+{% endblock %}

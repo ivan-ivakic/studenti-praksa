@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+// Dependencies
+@import "satin/dist/_core";
+
+// App settings
+@import "_settings/_settings";
+@import "_settings/_bootstrap-variables";
+@import "_settings/_satin-settings";
+@import "satin/dist/_satin";
+
+
+/*------------------------------------------------------------------------------------
+  HEXIS COMMONS
+------------------------------------------------------------------------------------*/
+@import "node_modules/hexis-commons/script-core/2.4/_style";
+@import "node_modules/hexis-commons/components/media-loader/2.2/_style";
+@import "node_modules/hexis-commons/components/content-swap/0.2/_style";
+
+
+/*------------------------------------------------------------------------------------
+  BASE
+------------------------------------------------------------------------------------*/
+@import "base/_base";
+@import "base/_preformat";
+@import "base/_mainHeader";
+@import "base/_mainFooter";
+
+
+/*------------------------------------------------------------------------------------
+  VENDOR
+------------------------------------------------------------------------------------*/
+// @import "node_modules/**/_lorem";
+// @import "vendor/**/_lorem";
+
+
+/*------------------------------------------------------------------------------------
+  BOOTSTRAP OVERWRITES
+------------------------------------------------------------------------------------*/
+@import "bootstrapOverwrites/_navbar";
+@import "bootstrapOverwrites/_card";
+@import "bootstrapOverwrites/_btn";
+@import "bootstrapOverwrites/_form";
+@import "bootstrapOverwrites/_table";
+@import "bootstrapOverwrites/_modal";
+@import "bootstrapOverwrites/_pagination";
+
+
+/*------------------------------------------------------------------------------------
+  COMPONENTS
+------------------------------------------------------------------------------------*/
+@import "components/_icon";
+@import "components/_sideCategories";
+@import "components/_templateList";
+@import "components/_templateView";
+@import "components/_templateEdit";
+
+
+/*------------------------------------------------------------------------------------
+  PAGES
+------------------------------------------------------------------------------------*/
+@import "pages/_pgLogin";
+@import "pages/_pgTemplates";
+@import "pages/_pgAlarms";
+@import "pages/_pgAudits";
+@import "pages/_pgUsers";

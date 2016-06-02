@@ -1,0 +1,65 @@
+form {
+  //
+
+
+  label {
+    font-weight: 600;
+  }
+}
+
+
+.form {
+  //
+
+
+  &-group {
+    margin: 0.25em 0 1.10em;
+
+
+    &:last-child {
+      margin-bottom: 0.5em;
+    }
+  }
+
+
+  &-control {
+    // height: 40px;
+
+
+    &::-moz-placeholder {
+      font-style: italic;
+      font-weight: normal;
+      opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+    &:-ms-input-placeholder {
+      font-style: italic;
+      font-weight: normal;
+    }
+    &::-webkit-input-placeholder  {
+      font-style: italic;
+      font-weight: normal;
+    }
+
+
+    &.-templateTitle {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+}
+
+
+.checkbox {
+  //
+
+
+  input {
+    vertical-align: 2px;
+    margin-right: 1px;
+  }
+
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

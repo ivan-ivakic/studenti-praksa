@@ -1,0 +1,121 @@
+// Bootstrap 3.3.5 mixin required by my mixin
+// bootstrap-sass/assets/stylesheets/bootstrap/mixins/_buttons.scss
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  // border-color: $border;
+  &:focus, &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+    // border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+    // border-color: darken($border, 12%);
+  }
+  &:active, &.active, .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+    // border-color: darken($border, 12%);
+
+    &:hover, &:focus, &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+      // border-color: darken($border, 25%);
+    }
+  }
+  &:active, &.active, .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled, &[disabled], fieldset[disabled] & {
+    &, &:hover, &:focus, &.focus, &:active, &.active {
+      background-color: $background;
+      // border-color: $border;
+    }
+  }
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+
+// Mixin to create a bootstrap button with custom colors
+@mixin bootstrap-button($background) {
+  $color: #fff;
+  $border: 5%;
+  @if (lightness($background) >= lightness(#aaa)) {
+    $color: #333;
+    $border: .2 * lightness($background);
+  }
+  @include button-variant($color, $background, darken($background, $border));
+}
+
+
+
+.btn {
+  padding-top: 0.35em;
+  padding-bottom: 0.4em;
+  font-weight: 500;
+  border: 0px !important;
+  border-radius: 2px;
+
+
+    .icon {
+      vertical-align: -3px;
+    }
+
+
+  &.-wide {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+
+  &.-wider {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+
+  &.-widest {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+
+
+  &.-fullWidth {
+    display: block;
+  }
+
+
+  &.btn-primary {
+    @include bootstrap-button($green);
+  }
+
+
+  &.btn-secondary {
+    @include bootstrap-button($blue);
+  }
+
+
+  &.btn-neutral {
+    @include bootstrap-button($lightGray);
+  }
+
+
+  .pageTitle + & {
+    margin-top: -3px;
+    margin-left: 0.75em;
+    vertical-align: 3px;
+  }
+
+
+  .sectionTitle + & {
+    margin-left: 0.75em;
+    vertical-align: 1px;
+  }
+}
+
+

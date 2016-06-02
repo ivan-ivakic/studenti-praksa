@@ -1,0 +1,41 @@
+html, body {
+  font-size: $textNormal;
+}
+
+
+.pageTitle {
+  display: block;
+  margin-bottom: 1.75rem;
+  font-size: 24px;
+  font-weight: bold;
+  color: $black;
+
+
+  &.-inline {
+    display: inline-block;
+  }
+}
+
+
+.section {
+  //
+
+
+  // &.-divide {
+  //   margin-bottom: 2rem;
+  //   padding-bottom: 2rem;
+  //   border-bottom: 1px solid $lightGray;
+  // }
+}
+
+
+.sectionTitle {
+  @extend .pageTitle;
+  margin-bottom: 1rem;
+  font-size: 19px;
+
+
+  &.-inline {
+    display: inline-block;
+  }
+}
