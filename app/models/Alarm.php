@@ -4,7 +4,7 @@ use Phalcon\Mvc\Model;
 
 class Alarm extends Model
 {
-    public $id;
+	public $id;
     public $guid;
     public $name;
     public $date;
@@ -16,6 +16,6 @@ class Alarm extends Model
 
     public function initialize(){
 		$this->hasMany("guid", "AlarmUser", "alarm_guid");
-		$this->belongsTo("template_guid", "Template", "guid");
+	    $this->belongsTo("template_guid", "Template", "guid");
 	}
 }

@@ -6,11 +6,11 @@ use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
-use Phalcon\Config\Adapter\Ini as ConfigIni;
+use Phalcon\Config\Adapter\Php;
 
 try {
 
-    $config = new ConfigIni("../app/config.ini");
+    $config = new Php("../app/config/config.php");
 
     $loader = new Loader();
     $loader->registerDirs(array(

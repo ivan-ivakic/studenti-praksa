@@ -13,6 +13,6 @@ class Role extends Model
     public $updated_at;
 
     public function initialize(){
-		$this->hasMany("guid", "RoleUser", "user_guid");
+		  $this->hasMany("guid", "RoleUser", "user_guid");
 	}
 }

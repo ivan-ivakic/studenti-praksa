@@ -4,7 +4,7 @@ use Phalcon\Mvc\Model;
 
 class AlarmUser extends Model
 {
-    public $alarm_guid;
+	public $alarm_guid;
     public $user_guid;
 
     public $created_at;
