@@ -11,7 +11,7 @@ class RoleUser extends Model
     public $updated_at;
 
     public function initialize(){
-    	$this->belongsTo("role_guid", "Role", "guid");
+        $this->belongsTo("role_guid", "Role", "guid");
     	$this->belongsTo("user_guid", "User", "guid");
     }
 }
