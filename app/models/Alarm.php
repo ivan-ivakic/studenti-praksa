@@ -15,7 +15,13 @@ class Alarm extends Model
     public $updated_at;
 
     public function initialize(){
-        $this->hasMany("guid", "AlarmUser", "alarm_guid");
+        $this->hasManyToMany(
+            "guid",
+            "AlarmUser",
+            "alarm_guid", "user_guid",
+            "User",
+            "guid"
+        );
         $this->belongsTo("template_guid", "Template", "guid");
     }
 }

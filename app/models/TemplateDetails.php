@@ -21,7 +21,7 @@ class TemplateDetails extends Model
 
     public function initialize(){
         $this->hasMany("guid", "ResponsiblePerson", "template_details_guid");
-        $this->hasMany("guid", "Category", "template_details_guid");
+        $this->belongsTo("guid", "Category", "template_details_guid");
         $this->belongsTo("user_guid", "User", "guid");
         $this->belongsTo("template_guid", "Template", "guid");
     }
