@@ -14,8 +14,20 @@ class User extends Model
     public $updated_at;
 
     public function initialize(){
-        $this->hasMany("guid", "AlarmUser", "user_guid");
-        $this->hasMany("guid", "RoleUser", "user_guid");
+        $this->hasManyToMany(
+            "guid",
+            "RoleUser",
+            "user_guid", "role_guid",
+            "Role",
+            "guid"
+        );
+        $this->hasManyToMany(
+            "guid",
+            "AlarmUser",
+            "user_guid", "alarm_guid",
+            "Alarm",
+            "guid"
+        );
         $this->hasMany("guid", "ResponsiblePerson", "user_guid");
         $this->hasMany("guid", "TemplateDetails", "user_guid");
     }

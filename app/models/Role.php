@@ -13,6 +13,12 @@ class Role extends Model
     public $updated_at;
 
     public function initialize(){
-        $this->hasMany("guid", "RoleUser", "user_guid");
+        $this->hasManyToMany(
+            "guid",
+            "RoleUser",
+            "role_guid", "user_guid",
+            "User",
+            "guid"
+        );
     }
 }
