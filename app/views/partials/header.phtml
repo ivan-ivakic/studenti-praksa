@@ -1,0 +1,35 @@
+<header class='mainHeader'>
+  <div class='grid'>
+    <div class='grid_column'>
+      <nav class="navbar navbar-light bg-faded mainHeader_nav">
+        <h1 class='navbar-brand logo mainHeader_logo'>
+          <a href='#'>
+            <img src='../public/icons/logo.svg' title='Document Management Software' alt='Document Management Software'>
+          </a>
+        </h1>
+        <ul class="nav navbar-nav pull-xs-right">
+          <li class="nav-item {% if pageID == 'pgTemplates' %}active{% endif %}">
+            <a class="nav-link" href="#"><span>
+              Predlošci
+            </span></a>
+          </li>
+          <li class="nav-item {% if pageID == 'pgAlarms' %}active{% endif %}">
+            <a class="nav-link" href="#"><span>
+              Alarmi
+            </span></a>
+          </li>
+          <li class="nav-item {% if pageID == 'pgAudits' %}active{% endif %}">
+            <a class="nav-link" href="#"><span>
+              Auditi
+            </span></a>
+          </li>
+          <li class="nav-item {% if pageID == 'pgUsers' %}active{% endif %}">
+            <a class="nav-link" href="#"><span>
+              Korisnici
+            </span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
