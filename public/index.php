@@ -8,27 +8,42 @@ use Phalcon\Mvc\Url as UrlProvider;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Config\Adapter\Php;
 
+require "../app/controllers/BaseController.php";
+
 try {
 
     $config = new Php("../app/config/config.php");
 
     $loader = new Loader();
     $loader->registerDirs(array(
-        $config->phalcon->controllersDir,
-        $config->phalcon->modelsDir,
+        $config->application->controllersDir,
+        $config->application->modelsDir,
     ))->register();
 
     $di = new FactoryDefault();
 
     $di->set('view', function () use ($config) {
         $view = new View();
-        $view->setViewsDir($config->phalcon->viewsDir);
+        $view->setViewsDir($config->application->viewsDir);
+        $view->registerEngines(
+            array(
+                ".phtml" => function ($view, $di) use ($config) {
+                    $volt = new Phalcon\Mvc\View\Engine\Volt($view, $di);
+                    $volt->setOptions(array(
+                        'compiledPath' => $config->application->cacheDir,
+                        'compiledSeparator' => '_',
+                        'compileAlways' => true // Development only
+                    ));
+                    return $volt;
+                }
+            )
+        );
         return $view;
     });
 
     $di->set('url', function () use ($config) {
         $url = new UrlProvider();
-        $url->setBaseUri($config->phalcon->baseUri);
+        $url->setBaseUri($config->application->baseUri);
         return $url;
     });
 

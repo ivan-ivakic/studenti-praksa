@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Predlosci" transform="translate(-1125.000000, -324.000000)" fill="#1D1D1D">
+            <g id="Page-1" transform="translate(1125.000000, 324.000000)">
+                <polygon id="Fill-1" points="0.187393939 15.8126061 0.951757576 10.5207273 5.47927273 15.0482424"></polygon>
+                <polygon id="Fill-2" points="13.1694545 4.95733333 5.76993939 12.3389091 5.31539394 11.8843636 12.7149091 4.50278788 11.4972121 3.28509091 4.11563636 10.6846061 3.66109091 10.2300606 11.0426667 2.83054545 9.84290909 1.63078788 2.46012121 9.01236364 1.5510303 9.92145455 2.752 11.1391515 3.20654545 11.5757576 4.42424242 12.7934545 4.86084848 13.248 6.07854545 14.4489697 14.3692121 6.15709091"></polygon>
+                <path d="M15.8787879,4.64872727 C15.8787879,4.64872727 14.8058182,2.3209697 14.2424242,1.75757576 C13.6790303,1.19418182 11.3512727,0.121212121 11.3512727,0.121212121 L10.4421818,1.03030303 L14.969697,5.55781818 L15.8787879,4.64872727 Z" id="Fill-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

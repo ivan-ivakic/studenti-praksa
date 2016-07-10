@@ -1,0 +1,110 @@
+{% extends "layouts/main.phtml" %}
+{% block content %}
+{% set pageID = "pgTemplates" %}
+{{ partial("partials/header") }}
+
+<div class='grid'>
+    <div class='grid_column'>
+        <div class="card card-block">
+
+            <div class='templateListHead'>
+                <div class='grid'>
+                    <div class='grid_column -medium6'>
+                        <h2 class="sectionTitle -inline">
+                            Pregled svih predložaka
+                        </h2>
+                        <a class='btn btn-primary' href='#'>
+                            Dodaj novi predlozak
+                        </a>
+                    </div>
+                    <div class='grid_column -medium6 textRight'>
+                        <form class='templateListHead_search form-inline' action=''>
+                            <div class="form-group">
+                                <label class="sr-only">Pretraga...</label>
+                                <input type="text" class="form-control templateListHead_search_input" placeholder="Pretraga...">
+                            </div>
+                            <button type="submit" class="btn btn-secondary templateListHead_search_submit">
+                                Trazi
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class='templateList'>
+
+                <!-- Side categories -->
+                <div class='templateList_sidebar'>
+                    <div class='templateList_sidebar_inner'>
+                        <h3 class='templateList_sidebar_title'>
+                            Kategorije
+                        </h3>
+                        <nav class='sideCategories'>
+                            <?php
+
+                            function generatePageTree($datas, $parent = 0, $depth=0){
+                                if($depth > 5) return ''; // Make sure not to have an endless recursion
+                                $tree = '<ul>';
+                                for($i=0, $ni=count($datas); $i < $ni; $i++){
+                                    if($datas[$i]['parent_id'] == $parent){
+                                        $tree .= '<li>';
+                                        $tree .= '<a>'.$datas[$i]['name'].'</a>';
+                                        $tree .= generatePageTree($datas, $datas[$i]['id'], $depth+1);
+                                        $tree .= '</li>';
+                                    }
+                                }
+                                $tree .= '</ul>';
+                                return $tree;
+                            }
+
+                            echo(generatePageTree($categoryArray));
+
+                            ?>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Template list -->
+                <div class='templateList_content'>
+                    <div class='templateList_content_inner'>
+                        <div class='table-responsive'>
+                            <table class="table table-hover -edge templateTable">
+                                <thead>
+                                    <tr>
+                                        <th class='templateTable_id'>Broj</th>
+                                        <th class='templateTable_date'>Datum</th>
+                                        <th class='templateTable_code'>Oznaka</th>
+                                        <th class='templateTable_title'>Naziv</th>
+                                        <th class='templateTable_status'>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class='templateTable_id'>2365362</td>
+                                        <td class='templateTable_date'>06.12.2014</td>
+                                        <td class='templateTable_code'>AB156CD346</td>
+                                        <td class='templateTable_title'><a class='link' href='#'>Ocjena dobavljaca</a></td>
+                                        <td class='templateTable_status'>Neodobren</td>
+                                        <td class='table_adminCell'>
+                                            <a href='#' class='table_adminCell_item'>
+                                                <img class='icon -h16 table_adminCell_icon -edit' src='../public/icons/edit.svg' alt=''>
+                                            </a>
+                                            <a class='table_adminCell_item'>
+                                                <img class='icon -h16 table_adminCell_icon -delete' src='../public/icons/delete.svg' alt=''>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ partial("partials/footer") }}
+{% endblock %}
