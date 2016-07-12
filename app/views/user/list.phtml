@@ -1,0 +1,82 @@
+{% extends "layouts/main.phtml" %}
+{% block content %}
+{% set pageID = "pgUsers" %}
+{{ partial("partials/header") }}
+
+  <div class='grid'>
+    <div class='grid_column'>
+      <h2 class="pageTitle -inline">Korisnici</h2>
+      <a class='btn btn-primary' data-toggle="modal" data-target="#userModal">
+        Dodaj novog korisnika
+      </a>
+
+      <table class="table table-hover -edge">
+        <thead>
+          <tr>
+            <th>Korisnicko ime</th>
+            <th>Datum kreiran</th>
+            <th>Privilegije</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($page->items as $user) {
+            ?>
+               <tr>
+                <td scope="row"><?php echo $user->name; ?></td>
+                <td><?php echo date('d.m.Y, H:i', strtotime($user->created_at)); ?></td>
+                <td>
+                <?php
+                    $output = '';
+                    foreach ($user->role as $userRole){
+                        $output .= $userRole->name . ', ';
+                    }
+                    $output = rtrim($output, ', ');
+                    echo $output;
+                 ?>
+                 </td>
+                <td class='table_adminCell'>
+                  <a class='table_adminCell_item' data-toggle="modal" data-target="#userModal">
+                    <img class='icon -h16 table_adminCell_icon -edit' src='../public/icons/edit.svg' alt=''>
+                  </a>
+                  <a class='table_adminCell_item'>
+                    <img class='icon -h16 table_adminCell_icon -delete' src='../public/icons/delete.svg' alt=''>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+            <?php
+            }
+            ?>
+        </tbody>
+      </table>
+
+      <nav>
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="./list?page=<?= $page->before; ?>" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <?php
+            for ($i = 1; $i <= $page->last; $i++){
+          ?>
+                <li class="page-item"><a class="page-link" href="./list?page=<?= $i ?>"><?php echo $i; ?></a></li>
+          <?php
+            }
+          ?>
+          <li class="page-item">
+            <a class="page-link" href="./list?page=<?= $page->next; ?>" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+{{ partial("partials/footer") }}
+{% endblock %}
