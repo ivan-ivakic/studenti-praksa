@@ -2,7 +2,6 @@
 
 return array(
     "database" => array(
-        "adapter" => "Mysql",
         "host" => "localhost",
         "username" => "root",
         "password" => "",
@@ -12,6 +11,7 @@ return array(
         "controllersDir" => "../app/controllers/",
         "modelsDir" => "../app/models/",
         "viewsDir" => "../app/views/",
+        "routesDir" => "../app/routes/",
         "cacheDir" => "../app/cache/",
         "baseUri" => "/studenti-praksa/",
         "cssPath" => "../public/css/",

@@ -5,8 +5,10 @@ use Phalcon\Mvc\View;
 use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Url as UrlProvider;
-use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 use Phalcon\Config\Adapter\Php;
+use Phalcon\Mvc\View\Engine\Volt;
+use Phalcon\Db\Adapter\Pdo\Mysql;
+use Phalcon\Mvc\Router;
 
 require "../app/controllers/BaseController.php";
 
@@ -18,6 +20,7 @@ try {
     $loader->registerDirs(array(
         $config->application->controllersDir,
         $config->application->modelsDir,
+        $config->application->routesDir
     ))->register();
 
     $di = new FactoryDefault();
@@ -28,7 +31,7 @@ try {
         $view->registerEngines(
             array(
                 ".phtml" => function ($view, $di) use ($config) {
-                    $volt = new Phalcon\Mvc\View\Engine\Volt($view, $di);
+                    $volt = new Volt($view, $di);
                     $volt->setOptions(array(
                         'compiledPath' => $config->application->cacheDir,
                         'compiledSeparator' => '_',
@@ -49,7 +52,7 @@ try {
 
     $di->set('db', function() use ($config){
         try {
-            $db = new \Phalcon\Db\Adapter\Pdo\Mysql(
+            $db = new Mysql(
                 array(
                     "host" => $config->database->host,
                     "username" => $config->database->username,
@@ -61,6 +64,12 @@ try {
             die("<b>Error initializing database connection:</b> " . $e->getMessage());
         }
         return $db;
+    });
+
+    $di->set('router', function() {
+        $router = new Router();
+        $router->mount(new TemplateRoutes());
+        return $router;
     });
 
     $application = new Application($di);

@@ -42,23 +42,40 @@
                         <nav class='sideCategories'>
                             <?php
 
-                            function generatePageTree($datas, $parent = 0, $depth=0){
-                                if($depth > 5) return ''; // Make sure not to have an endless recursion
+                            function generateCategoryTree($categories, $categoryId, $parent = 0, $depth=0){
+                                if($depth > 10)
+                                {
+                                    return "";
+                                }
                                 $tree = '<ul>';
-                                for($i=0, $ni=count($datas); $i < $ni; $i++){
-                                    if($datas[$i]['parent_id'] == $parent){
-                                        $tree .= '<li>';
-                                        $tree .= '<a>'.$datas[$i]['name'].'</a>';
-                                        $tree .= generatePageTree($datas, $datas[$i]['id'], $depth+1);
+
+                                $ni=count($categories);
+                                for($i=0; $i < $ni; $i++){
+                                    if($categories[$i]['parent_id'] == $parent){
+                                        $class = "";
+                                        if($categories[$i]['id'] == $categoryId)
+                                        {
+                                            $class = "active";
+                                        }
+
+                                        $tree .= '<li class="'.$class.'">';
+                                        $tree .= Phalcon\Tag::linkTo(
+                                            array(
+                                                array('for' => 'template-category', 'category' => $categories[$i]['id']),
+                                                $categories[$i]['name'],
+                                                'class' => $class
+                                            )
+                                        );
                                         $tree .= '</li>';
+                                        $tree .= generateCategoryTree($categories, $categoryId, $categories[$i]['id'], $depth+1);
                                     }
                                 }
+
                                 $tree .= '</ul>';
                                 return $tree;
                             }
 
-                            echo(generatePageTree($categoryArray));
-
+                            echo(generateCategoryTree($categories, $categoryId));
                             ?>
                         </nav>
                     </div>
@@ -80,11 +97,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {% for t in page.items %}
                                     <tr>
-                                        <td class='templateTable_id'>2365362</td>
-                                        <td class='templateTable_date'>06.12.2014</td>
-                                        <td class='templateTable_code'>AB156CD346</td>
-                                        <td class='templateTable_title'><a class='link' href='#'>Ocjena dobavljaca</a></td>
+                                        <td class='templateTable_id'>{{ t.id }}</td>
+                                        <td class='templateTable_date'>{{ t.updated_at }}</td>
+                                        <td class='templateTable_tag'>{{ t.tag }}</td>
+                                        <td class='templateTable_name'><a class='link' href='#'>{{ t.name }}</a></td>
                                         <td class='templateTable_status'>Neodobren</td>
                                         <td class='table_adminCell'>
                                             <a href='#' class='table_adminCell_item'>
@@ -95,6 +113,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>
