@@ -5,7 +5,7 @@ return array(
         "adapter" => "Mysql",
         "host" => "localhost",
         "username" => "root",
-        "password" => "1234",
+        "password" => "",
         "dbname" => "document_management"
     ),
     "application" => array(
@@ -13,7 +13,7 @@ return array(
         "modelsDir" => "../app/models/",
         "viewsDir" => "../app/views/",
         "cacheDir" => "../app/cache/",
-        "baseUri" => "/document_management/studenti-praksa/",
+        "baseUri" => "/studenti-praksa/",
         "cssPath" => "../public/css/",
         "jsPath" => "../public/js/"
     )
