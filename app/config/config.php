@@ -13,6 +13,7 @@ return array(
         "modelsDir" => "../app/models/",
         "viewsDir" => "../app/views/",
         "cacheDir" => "../app/cache/",
+        "formsDir"  =>  "../app/forms/",
         "baseUri" => "/studenti-praksa/",
         "cssPath" => "../public/css/",
         "jsPath" => "../public/js/"
