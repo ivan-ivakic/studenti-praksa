@@ -52,9 +52,6 @@ class UserController extends BaseController{
                     // check if email already exists
                     if(!User::findFirstByEmail($req['email'])){
 
-                        // check if passwords match
-                        if($req['password'] == $req['password_repeat']){
-
                             $roles = array();
 
                             // assign roles
@@ -86,9 +83,7 @@ class UserController extends BaseController{
 
                             // flash messages to be implemented after login
                             $this->response->redirect('user/list', false, 200);
-                        }
-                        // password dosen't match
-                        // flash messages to be implemented after login
+                            
                     }
                     // email already exists
                     // flash messages to be implemented after login

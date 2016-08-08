@@ -6,6 +6,7 @@ use Phalcon\Forms\Element\Password;
 use Phalcon\Forms\Element\Check;
 use Phalcon\Validation\Validator\PresenceOf;
 use Phalcon\Validation\Validator\Email;
+use Phalcon\Validation\Validator\Confirmation;
 
 class UserForm extends Form{
 
@@ -33,7 +34,7 @@ class UserForm extends Form{
         $email->addValidator(
             new PresenceOf(
                 array(
-                    'message' => 'Ime je obavezno polje'
+                    'message' => 'Email je obavezno polje'
                 )
             )
         );
@@ -56,7 +57,16 @@ class UserForm extends Form{
         $password->addValidator(
             new PresenceOf(
                 array(
-                    'message' => 'Email je obavezno polje'
+                    'message' => 'Password je obavezno polje'
+                )
+            )
+        );
+
+        $password->addValidator(
+            new Confirmation(
+                array(
+                    'message'   =>  'Password ne odgovara ponovljenom passwordu',
+                    'with'      =>  'password_repeat'
                 )
             )
         );
