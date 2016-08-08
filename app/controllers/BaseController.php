@@ -12,7 +12,7 @@ class BaseController extends Controller
            ->addCss('css/bootstrap.min.css');
 
        $this->assets
-           ->addJs('js/bootstrap.min.js')
-           ->addJs('js/jquery.min.js');
+           ->addJs('js/jquery.min.js')
+           ->addJs('js/bootstrap.min.js');
     }
 }

@@ -57,5 +57,80 @@
     </div>
   </div>
 
+  <!-- Add / edit user modal -->
+  <div class="modal fade" id='userModal'>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Dodaj novog korisnika</h4>
+        </div>
+        <form method='POST' action='create'>
+          <div class="modal-body">
+            <fieldset class="form-group">
+              <label>Korisničko ime</label>
+              {{ form.render("name") }}
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Email</label>
+              {{ form.render("email") }}
+            </fieldset>
+            <fieldset class="form-group">
+              <div class='grid -clean'>
+                <div class='grid_column -small6'>
+                  <label>Lozinka</label>
+                  {{ form.render("password") }}
+                </div>
+                <div class='grid_column -small6'>
+                  <label>Ponovi lozinku</label>
+                  {{ form.render("password_repeat") }}
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Privilegije</label>
+              <div class="checkbox">
+                <label>
+                  {{ form.render("add_templates") }}
+                  Add templates
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  {{ form.render("add_users") }}
+                  Add users
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  {{ form.render("add_alarms") }}
+                  Add alarms
+                </label>
+              </div>
+            </fieldset>
+            <!--
+            <fieldset class="form-group">
+              <label>Statusi</label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="" checked>
+                  Račun aktivan
+                </label>
+              </div>
+            </fieldset>
+            -->
+          
+          </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Dodaj korisnika</button>
+              <button type="button" class="btn btn-neutral" data-dismiss="modal">Odustani</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 {{ partial("partials/footer") }}
 {% endblock %}
