@@ -96,4 +96,77 @@ class UserController extends BaseController{
         // not POST method
         // // flash messages to be implemented after login
     }
+
+    public function editAction($id){
+        $user = User::findFirstById($id);
+        if(!$user){
+            // user not found
+        }
+
+        $form = new UserForm($user,
+            array(
+                'edit'  =>  true
+            )
+        );
+
+        $this->view->setVar('form', $form);
+    }
+
+
+    public function saveAction(){
+        
+        // check if method is post
+        if($this->request->isPost()){
+
+            // get submited request
+            $req = $this->request->getPost();
+            
+            $user = User::findFirstById($req['id']) ;
+            
+            if(!$user){
+                // user does not exist
+                // flash messages to be implemented after login
+            }
+
+            $form = new UserForm($user,
+            array(
+                'edit'  =>  true
+                )
+            );
+
+            // check if form is valid
+            if($form->isValid($req)){
+                $roles = array();
+
+
+                // assign new roles
+                if (isset($req['add_templates'])){
+                    $role = Role::findFirstByName("Add templates");
+                    $roles[] = $role;
+                }
+
+                if (isset($req['add_users'])){
+                    $role = Role::findFirstByName("Add users");
+                    $roles[] = $role;
+                }
+
+                if (isset($req['add_alarms'])){
+                    $role = Role::findFirstByName("Add alarms");
+                    $roles[] = $role;
+                }
+
+                $user->role = $roles;
+
+                $user->save();
+                // flash messages to be implemented after login
+                $this->response->redirect('user/list', false, 200);
+            }
+            // form not valid
+            foreach ($form->getMessages() as $message) {
+                // flash messages to be implemented after login
+            }
+        }
+        // not POST method
+        // flash messages to be implemented after login
+    }
 }
