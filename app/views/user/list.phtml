@@ -37,7 +37,7 @@
                  ?>
                  </td>
                 <td class='table_adminCell'>
-                  <a class='table_adminCell_item' data-toggle="modal" data-target="#userModal">
+                  <a class='table_adminCell_item' href='edit/<?php echo $user->id ?>'>
                     <img class='icon -h16 table_adminCell_icon -edit' src='../public/icons/edit.svg' alt=''>
                   </a>
                   <a class='table_adminCell_item'>
@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  <!-- Add / edit user modal -->
+  <!-- Add user modal -->
   <div class="modal fade" id='userModal'>
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -131,6 +131,5 @@
       </div>
     </div>
   </div>
-
 {{ partial("partials/footer") }}
 {% endblock %}
